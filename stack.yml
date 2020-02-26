@@ -3,7 +3,7 @@ provider:
   name: openfaas
   gateway: http://127.0.0.1:8080
 functions:
-  clojure-faas:
+  openclojure:
     lang: clojure
-    handler: ./clojure-faas
-    image: clojure-faas:latest
+    handler: ./openclojure
+    image: openclojure:latest
