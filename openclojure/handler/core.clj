@@ -1,3 +1,9 @@
 (ns handler.core)
 
-(defn function [input] (concat "Hello World_" input))
+(defn handler [req]
+  {:status 200
+   :body "Hello, Clojure."
+   :headers {}})
+
+(def function
+  (-> handler))
