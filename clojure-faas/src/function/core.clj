@@ -2,7 +2,7 @@
 
 (defn handler [req]
   {:status 200
-   :body "Hello, Clojure. It is Paul. 1235432"
+   :body "hmm"
    :headers {}})
 
 (def app
