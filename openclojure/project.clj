@@ -5,7 +5,9 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :main function.main
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [ring/ring-jetty-adapter "1.8.0"]]
+                 [ring/ring-jetty-adapter "1.8.0"]
+                 [hiccup "1.0.5"]
+                 [metosin/reitit "0.3.7"]]
   :source-paths ["src/clj" "src/cljc" "src/cljs"]
   :profiles {:uberjar {:source-paths ["src/function/clj"]
                          ;:prep-tasks ["clean"
