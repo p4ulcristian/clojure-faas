@@ -6,4 +6,4 @@ functions:
   openclojure:
     lang: clojure
     handler: ./openclojure
-    image: openclojure:1.4
+    image: openclojure:1.5
