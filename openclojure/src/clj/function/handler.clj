@@ -37,7 +37,6 @@
 
 (def app
   (do
-    (start-router!)
     (reitit-ring/ring-handler
       (reitit-ring/router
         [["/" {:get {:handler (fn [req] (html-wrap (html-page req)))}}]])
