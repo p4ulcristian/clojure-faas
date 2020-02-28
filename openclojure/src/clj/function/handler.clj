@@ -1,9 +1,9 @@
-(ns handler.core)
+(ns function.handler)
 
 (defn handler [req]
   {:status 200
-   :body "gsdfgfgfd"
+   :body "Hello, dsaClojure."
    :headers {}})
 
-(def function
+(def app
   (-> handler))
