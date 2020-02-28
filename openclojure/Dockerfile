@@ -1,23 +1,27 @@
-FROM clojure:openjdk-14-lein-2.9.1-alpine AS builder
-WORKDIR /root/
-COPY src src
-COPY project.clj project.clj
-RUN apk add --update nodejs npm
-RUN npm install --only=production
-RUN lein uberjar && mv target/function.jar .
+FROM openfaas/classic-watchdog:0.18.1 as watchdog
 
+FROM alpine:3.11
 
-FROM openjdk:14-alpine AS release
-WORKDIR /root/
-RUN apk update && apk add bash
-#for watchdog
-COPY --from=builder /root/function.jar /root/
-ADD https://github.com/openfaas-incubator/of-watchdog/releases/download/0.7.6/of-watchdog /usr/bin/fwatchdog
+RUN mkdir -p /home/app
+
+COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
-ENV upstream_url="http://127.0.0.1:3000"
-ENV mode="http"
-ENV fprocess="java -jar function.jar"
+
+# Add non root user
+RUN addgroup -S app && adduser app -S -G app
+RUN chown app /home/app
+
+WORKDIR /home/app
+
+USER app
+
+# Populate example here - i.e. "cat", "sha512sum" or "node index.js"
+ENV fprocess="cat"
+# Set to true to see request in function logs
+ENV write_debug="false"
+
 EXPOSE 8080
-HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
-ENV suppress_lock=true
+
+HEALTHCHECK --interval=3s CMD [ -e /tmp/.lock ] || exit 1
+
 CMD ["fwatchdog"]
