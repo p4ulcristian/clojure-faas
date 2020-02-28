@@ -7,3 +7,9 @@ functions:
     lang: dockerfile
     handler: ./openclojure
     image: openclojure:1.5
+    limits:
+          memory: 1000Mi
+          cpu: 1000m
+        requests:
+          memory: 1000Mi
+          cpu: 1000m
