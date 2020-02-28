@@ -5,5 +5,5 @@ provider:
 functions:
   openclojure:
     lang: clojure
-    handler: ./openclojure2
-    image: openclojure:1.2
+    handler: ./openclojure
+    image: openclojure:1.3
