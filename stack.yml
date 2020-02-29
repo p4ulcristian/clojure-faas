@@ -5,6 +5,5 @@ provider:
 functions:
   docker-func:
     lang: dockerfile
-    handler: ./docker-func
-    image: docker-func:latest
-
+    handler: ./openclojure
+    image: openclojure:latest
