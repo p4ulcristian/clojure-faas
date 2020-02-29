@@ -28,7 +28,7 @@
   server)
 
 (defn -main [& args]
-  (run-jetty app {:port 3000
+  (run-jetty app {:port 4000
                   :configurator add-lifecycle-listener}))
 
 (defn dev [config-key]
