@@ -13,7 +13,8 @@
 
 (defn client-page []
   [:div {:style {:min-height "100vh"}}
-    [:h1 "Szia Tibi"]])
+    [:h1 "Reagent"]
+    [:h3 "it works afterall :')'"]])
 
 (defn mount-root []
   (reagent/render [client-page] (.getElementById js/document "app")))
@@ -37,4 +38,3 @@
        (boolean (reitit/match-by-path router path)))})
   (accountant/dispatch-current!)
   (mount-root))
-
