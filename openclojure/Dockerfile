@@ -18,7 +18,7 @@ RUN chmod +x /usr/bin/fwatchdog
 
 ENV read_timeout="1800"
 ENV write_timeout="1800"
-ENV upstream_url="https://127.0.0.1:4000"
+ENV upstream_url="http://127.0.0.1:4000"
 ENV mode="http"
 ENV fprocess="java -jar function.jar"
 ENV write_debug="true"
