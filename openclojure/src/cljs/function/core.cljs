@@ -13,7 +13,7 @@
 
 (defn client-page []
   [:div {:style {:min-height "100vh"}}
-    [:h1 "But can we go reagent?"]])
+    [:h1 "Szia Tibi"]])
 
 (defn mount-root []
   (reagent/render [client-page] (.getElementById js/document "app")))

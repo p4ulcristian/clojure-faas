@@ -17,7 +17,10 @@ COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
 ENV read_timeout="1800"
 ENV write_timeout="1800"
+
 ENV upstream_url="http://127.0.0.1:4000"
+
+
 ENV mode="http"
 # Populate example here - i.e. "cat", "sha512sum" or "node index.js"
 ENV fprocess="java -jar function.jar"
