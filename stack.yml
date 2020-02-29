@@ -3,7 +3,7 @@ provider:
   name: openfaas
   gateway: http://127.0.0.1:31112
 functions:
-  docker-func:
+  openclojure:
     lang: dockerfile
     handler: ./openclojure
     image: openclojure:latest
