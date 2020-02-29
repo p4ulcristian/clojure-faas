@@ -15,17 +15,13 @@ RUN mkdir -p /home/app
 COPY --from=builder /root/function.jar /root/
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
+
 ENV read_timeout="1800"
 ENV write_timeout="1800"
-
-ENV upstream_url="http://127.0.0.1:4000"
-
-
+ENV upstream_url="https://127.0.0.1:4000"
 ENV mode="http"
-# Populate example here - i.e. "cat", "sha512sum" or "node index.js"
 ENV fprocess="java -jar function.jar"
-# Set to true to see request in function logs
 ENV write_debug="true"
 EXPOSE 8080
-HEALTHCHECK --interval=60s CMD [ -e /tmp/.lock ] || exit 1
+HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 CMD ["fwatchdog"]
