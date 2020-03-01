@@ -6,7 +6,7 @@
 (def mount-target
   "Loading screen for mounting"
   [:div#app
-   [:h1 "Something is not in balance."]])
+   [:h1 "Please work..."]])
 
 (defn html-head [req]
       "Head with some metatags"
@@ -23,8 +23,7 @@
       (html5
         (html-head req)
         [:body {:class "body-container"}
-         mount-target
-         (include-js "/js/app.js")]))
+         mount-target]))
 
 (defn request-wrap [status content-type body]
       "wrap request with status and headers"

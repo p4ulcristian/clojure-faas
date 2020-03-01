@@ -1,8 +1,7 @@
 (ns function.main
   (:require [ring.adapter.jetty :refer [run-jetty]]
-            [function.handler :refer [app]]
-            [shadow.cljs.devtools.server :as server]
-            [shadow.cljs.devtools.api :as shadow])
+            [function.handler :refer [app]])
+
   (:import [org.eclipse.jetty.util.component LifeCycle$Listener]
            [java.io File])
   (:gen-class))
@@ -31,9 +30,3 @@
   (run-jetty app {:port 4000
                   :configurator add-lifecycle-listener}))
 
-(defn dev [config-key]
-      (-main)
-      (server/stop!)
-      (server/start!)
-      ;(shadow/compile :app)
-      (shadow/watch config-key))

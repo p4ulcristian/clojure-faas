@@ -11,7 +11,7 @@ functions:
         read_timeout: 60s
         write_timeout: 60s
     annotations:
-     com.openfaas.health.http.initialDelay: "50s"
+     com.openfaas.health.http.initialDelay: "3m"
     limits:
      memory: 800Mi
     requests:
