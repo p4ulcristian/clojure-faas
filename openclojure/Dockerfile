@@ -9,15 +9,12 @@ RUN apk add --update nodejs npm
 RUN npm install --only=production
 RUN lein uberjar && mv target/function.jar .
 
-
-FROM alpine:3.11
+FROM openjdk:14-alpine
 WORKDIR /root/
 RUN mkdir -p /home/app
 COPY --from=builder /root/function.jar /root/
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
 RUN chmod +x /usr/bin/fwatchdog
-RUN apk add --update openjdk8-jre
-
 
 ENV read_timeout="1800"
 ENV write_timeout="1800"
@@ -26,5 +23,5 @@ ENV mode="http"
 ENV fprocess="java -jar function.jar"
 ENV write_debug="true"
 EXPOSE 8080
-HEALTHCHECK --interval=20s CMD [ -e /tmp/.lock ] || exit 1
+HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 CMD ["fwatchdog"]
