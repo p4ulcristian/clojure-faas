@@ -18,13 +18,12 @@
                 :content "width=device-width, initial-scale=1"}]])
 
 
-(defn html-page [req param]
+(defn html-page [req]
       "The client's page"
       (html5
         (html-head req)
         [:body {:class "body-container"}
          mount-target
-         (str param)
          (include-js "/js/app.js")]))
 
 (defn request-wrap [status content-type body]
@@ -41,7 +40,7 @@
   (do
     (reitit-ring/ring-handler
       (reitit-ring/router
-        [["/" {:get {:handler (fn [req] (html-wrap (html-page req "home")))}}]])
+        [["/" {:get {:handler (fn [req] (html-wrap (html-page req)))}}]])
       (reitit-ring/routes
         (reitit-ring/create-resource-handler {:path "/" :root "/public"})
         (reitit-ring/create-default-handler))
