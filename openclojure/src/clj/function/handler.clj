@@ -18,13 +18,13 @@
                 :content "width=device-width, initial-scale=1"}]])
 
 
-(defn html-page [req]
+(defn html-page [req the-param]
       "The client's page"
       (html5
         (html-head req)
         [:body {:class "body-container"}
          mount-target
-         [:h3 "Slowly put in router"]]))
+         [:h3 the-param]]))
 
 (defn request-wrap [status content-type body]
       "wrap request with status and headers"
@@ -40,7 +40,8 @@
   (do
     (reitit-ring/ring-handler
       (reitit-ring/router
-        [["/" {:get {:handler (fn [req] (html-wrap (html-page req)))}}]])
+        [["/" {:get {:handler (fn [req] (html-wrap (html-page req "home")))}}]
+         ["/other" {:get {:handler (fn [req] (html-wrap (html-page req "other")))}}]])
       (reitit-ring/routes
         (reitit-ring/create-resource-handler {:path "/" :root "/public"})
         (reitit-ring/create-default-handler))
