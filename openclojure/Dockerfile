@@ -10,7 +10,7 @@ RUN npm install --only=production
 RUN lein uberjar && mv target/function.jar .
 
 FROM openjdk:14-alpine
-WORKDIR /root/ 
+WORKDIR /root/
 RUN mkdir -p /home/app
 COPY --from=builder /root/function.jar /root/
 COPY --from=watchdog /fwatchdog /usr/bin/fwatchdog
@@ -21,6 +21,6 @@ ENV upstream_url="http://127.0.0.1:4000"
 ENV mode="http"
 ENV fprocess="java -jar function.jar"
 ENV write_debug="true"
-EXPOSE 8080
+EXPOSE 8080 
 HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 CMD ["fwatchdog"]
