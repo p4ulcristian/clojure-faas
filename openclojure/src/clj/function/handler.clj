@@ -42,7 +42,7 @@
     (reitit-ring/ring-handler
       (reitit-ring/router
         [["/" {:get {:handler (fn [req] (html-wrap (html-page req "home")))}}]
-         ["/other" {:get {:handler (fn [req] (html-wrap (html-page req "other")))}}]])
+         ;["/other" {:get {:handler (fn [req] (html-wrap (html-page req "other")))}}]])
       (reitit-ring/routes
         (reitit-ring/create-resource-handler {:path "/" :root "/public"})
         (reitit-ring/create-default-handler))
