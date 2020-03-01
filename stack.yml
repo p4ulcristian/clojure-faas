@@ -10,3 +10,10 @@ functions:
     environment:
         read_timeout: 60s
         write_timeout: 60s
+    annotations:
+         com.openfaas.health.http.path: "/healthz"
+         com.openfaas.health.http.initialDelay: "50s"
+   limits:
+     memory: 800Mi
+    requests:
+     memory: 200Mi
