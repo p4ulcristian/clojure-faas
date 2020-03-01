@@ -9,6 +9,7 @@ RUN apk add --update nodejs npm
 RUN npm install --only=production
 RUN lein uberjar && mv target/function.jar .
 
+
 FROM openjdk:14-alpine
 WORKDIR /root/
 RUN mkdir -p /home/app
