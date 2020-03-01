@@ -25,7 +25,7 @@
         [:body {:class "body-container"}
          mount-target
          [:h3 the-param]
-         (include-js "/js/app.js")]))
+         (include-js "js/app.js")]))
 
 (defn request-wrap [status content-type body]
       "wrap request with status and headers"
