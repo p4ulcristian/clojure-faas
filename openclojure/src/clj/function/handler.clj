@@ -6,7 +6,7 @@
 (def mount-target
   "Loading screen for mounting"
   [:div#app
-   [:h1 "Please work...2"]])
+   [:h1 "Please work...3"]])
 
 (defn html-head [req]
       "Head with some metatags"
