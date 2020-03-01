@@ -26,5 +26,5 @@ ENV mode="http"
 ENV fprocess="java -jar function.jar"
 ENV write_debug="true"
 EXPOSE 8080
-HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
+HEALTHCHECK --interval=20s CMD [ -e /tmp/.lock ] || exit 1
 CMD ["fwatchdog"]
