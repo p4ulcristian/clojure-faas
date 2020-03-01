@@ -23,7 +23,8 @@
       (html5
         (html-head req)
         [:body {:class "body-container"}
-         mount-target]))
+         mount-target
+         [:h3 "Slowly put in router"]]))
 
 (defn request-wrap [status content-type body]
       "wrap request with status and headers"
