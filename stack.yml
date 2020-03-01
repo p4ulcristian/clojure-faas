@@ -13,6 +13,6 @@ functions:
     annotations:
      com.openfaas.health.http.initialDelay: "50s"
     limits:
-      memory: 800Mi
-     requests:
-      memory: 200Mi
+     memory: 800Mi
+    requests:
+     memory: 200Mi
