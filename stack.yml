@@ -11,3 +11,7 @@ functions:
         read_timeout: 60s
         write_timeout: 60s
         upstream_timeout: 55s
+    limits:
+     memory: 1000Mi
+     cpu: 1000m
+
