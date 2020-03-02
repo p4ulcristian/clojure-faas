@@ -6,7 +6,7 @@
 (def mount-target
   "Loading screen for mounting"
   [:div#app
-   [:h1 "Please work...3"]])
+   [:h1 "(simple-code)"]])
 
 (defn html-head [req]
       "Head with some metatags"
@@ -25,7 +25,7 @@
         [:body {:class "body-container"}
          mount-target
          [:h3 the-param]
-         (include-js "openclojure/js/app.js")]))
+         (include-js "js/app.js")]))
 
 (defn request-wrap [status content-type body]
       "wrap request with status and headers"
