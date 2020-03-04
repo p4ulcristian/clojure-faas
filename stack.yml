@@ -17,5 +17,5 @@ functions:
         read_timeout: 60s
         write_timeout: 60s
     annotations:
-     com.openfaas.health.http.initialDelay: "60s"
+     com.openfaas.health.http.initialDelay: "20s"
 
