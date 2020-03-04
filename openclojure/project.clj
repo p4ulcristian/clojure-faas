@@ -11,11 +11,11 @@
                  ;Backend-side
                  [hiccup "1.0.5"]
                  [ring/ring-jetty-adapter "1.8.0"]
+                 [clj-http "3.10.0"]
 
                  ;Client-side
                  [reagent-utils "0.3.3"]
                  [pez/clerk "1.0.0"]
-                 [clj-http "3.10.0"]
                  [venantius/accountant "0.2.4"
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.9.1"]
