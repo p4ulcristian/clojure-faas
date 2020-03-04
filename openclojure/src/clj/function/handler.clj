@@ -29,7 +29,7 @@
          [:h3 "lets see if it stays unmodified."]
          [:h4 (str "Hello There successful :)")]
          [:h4 "First api endpoint: "
-          (str (client/get "10.244.0.90"))]]))
+          (str (client/get "https://10.244.0.90"))]]))
          ;(include-js "js/app.js")]))
 
 (defn request-wrap [status content-type body]
