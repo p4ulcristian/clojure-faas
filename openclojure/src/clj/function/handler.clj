@@ -25,6 +25,7 @@
         (html-head req)
         [:body {:class "body-container"}
          mount-target
+         [:h2 "edited buildshiprun"]
          [:h3 "lets see if it stays unmodified."]
          [:h4 (str "Hello There successful :)")]]))
          ;[:h4 (str req)]]))
