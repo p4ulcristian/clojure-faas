@@ -1,0 +1,17 @@
+apiVersion: openfaas.com/v1alpha2
+kind: FunctionIngress
+metadata:
+  name: iron-tls
+  namespace: openfaas
+spec:
+  domain: "ironrainbow.hu"
+  function: "paul931224-openclojure"
+  ingressType: "nginx"
+  tls:
+    enabled: true
+    issuerRef:
+      name: "letsencrypt-prod"
+      # Change to ClusterIssuer if required
+      # https://docs.cert-manager.io/en/latest/reference/clusterissuers.html
+      # https://docs.cert-manager.io/en/latest/reference/issuers.html
+      kind: "ClusterIssuer"

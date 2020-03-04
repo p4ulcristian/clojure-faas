@@ -15,6 +15,7 @@
                  ;Client-side
                  [reagent-utils "0.3.3"]
                  [pez/clerk "1.0.0"]
+                 [clj-http "3.10.0"]
                  [venantius/accountant "0.2.4"
                   :exclusions [org.clojure/tools.reader]]
                  [reagent "0.9.1"]
@@ -48,7 +49,7 @@
   :profiles {:uberjar {:source-paths ["src/function/clj"]
                        :prep-tasks ["clean"
                                     "compile"
-                                    ["shadow" "compile" "app"]]
+                                    ["shadow" "release" "app"]]
                          :aot :all
                          :omit-source true}}
 

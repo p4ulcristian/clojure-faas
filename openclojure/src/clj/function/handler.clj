@@ -1,7 +1,8 @@
 (ns function.handler
     (:require
       [hiccup.page :refer [include-js include-css html5]]
-      [reitit.ring :as reitit-ring]))
+      [reitit.ring :as reitit-ring]
+      [clj-http.client :as client]))
 
 (def mount-target
   "Loading screen for mounting"
@@ -25,7 +26,8 @@
         [:body {:class "body-container"}
          mount-target
          [:h3 the-param]
-         [:h4 (str req)]]))
+         [:h4 (client/get "https://paul931224.simple-code.hu/rand-name")]]))
+         ;[:h4 (str req)]]))
          ;(include-js "js/app.js")]))
 
 (defn request-wrap [status content-type body]
