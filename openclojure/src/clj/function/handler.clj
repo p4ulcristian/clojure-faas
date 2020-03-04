@@ -25,7 +25,7 @@
         (html-head req)
         [:body {:class "body-container"}
          mount-target
-         [:h3 the-param]
+         [:h3 "lets see if it stays unmodified."]
          [:h4 (str "Hello There successful :)")]]))
          ;[:h4 (str req)]]))
          ;(include-js "js/app.js")]))
