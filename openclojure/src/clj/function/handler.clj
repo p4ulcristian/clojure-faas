@@ -27,8 +27,9 @@
          mount-target
          [:h2 "edited buildshiprun"]
          [:h3 "lets see if it stays unmodified."]
-         [:h4 (str "Hello There successful :)")]]))
-         ;[:h4 (str req)]]))
+         [:h4 (str "Hello There successful :)")]
+         [:h4 "First api endpoint: "
+          (str (:body (client/get "https://paul931224.simple-code.hu/rand-name")))]]))
          ;(include-js "js/app.js")]))
 
 (defn request-wrap [status content-type body]
