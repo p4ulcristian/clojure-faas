@@ -26,7 +26,7 @@
         [:body {:class "body-container"}
          mount-target
          [:h3 the-param]
-         [:h4 (str "hello" (client/get "https://paul931224.simple-code.hu/rand-name"))]]))
+         [:h4 (str "hello")]]))
          ;[:h4 (str req)]]))
          ;(include-js "js/app.js")]))
 
