@@ -14,7 +14,7 @@
 (defn client-page []
   [:div {:style {:min-height "100vh"}}
     [:h1 "Reagent"]
-    [:h3 "it works afterall :')"]])
+    [:h3 "It should still work."]])
 
 (defn mount-root []
   (reagent/render [client-page] (.getElementById js/document "app")))

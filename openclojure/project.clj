@@ -6,11 +6,13 @@
   :main function.main
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.520"]
-                 [metosin/reitit "0.3.7"]
+
 
                  ;Backend-side
                  [hiccup "1.0.5"]
+                 [metosin/reitit "0.3.7"]
                  [ring/ring-jetty-adapter "1.8.0"]
+                 [http-kit "2.3.0"]
                  [clj-http "3.10.0"]
 
                  ;Client-side

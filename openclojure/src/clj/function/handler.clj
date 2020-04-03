@@ -29,7 +29,7 @@
          [:h3 "lets see if it stays unmodified."]
          [:h4 (str "Hello There successful :)")]
          [:h4 "Rand name: "
-          (str  (client/get "https://paul931224.simple-code.hu/rand-name"))]]))
+          (str  (client/get "http://simple-strimzi-kafka-bootstrap.strimzi.svc.cluster.local:9092"))]]))
          ;(include-js "js/app.js")]))
 
 (defn request-wrap [status content-type body]

@@ -123,8 +123,8 @@ return null;
  * Recursively merge values based on the information in their metadata.
  */
 meta_merge.core.meta_merge = (function meta_merge$core$meta_merge(var_args){
-var G__20058 = arguments.length;
-switch (G__20058) {
+var G__3232 = arguments.length;
+switch (G__3232) {
 case 0:
 return meta_merge.core.meta_merge.cljs$core$IFn$_invoke$arity$0();
 
@@ -139,14 +139,14 @@ return meta_merge.core.meta_merge.cljs$core$IFn$_invoke$arity$2((arguments[(0)])
 break;
 default:
 var args_arr__4751__auto__ = [];
-var len__4730__auto___20065 = arguments.length;
-var i__4731__auto___20066 = (0);
+var len__4730__auto___3272 = arguments.length;
+var i__4731__auto___3273 = (0);
 while(true){
-if((i__4731__auto___20066 < len__4730__auto___20065)){
-args_arr__4751__auto__.push((arguments[i__4731__auto___20066]));
+if((i__4731__auto___3273 < len__4730__auto___3272)){
+args_arr__4751__auto__.push((arguments[i__4731__auto___3273]));
 
-var G__20067 = (i__4731__auto___20066 + (1));
-i__4731__auto___20066 = G__20067;
+var G__3274 = (i__4731__auto___3273 + (1));
+i__4731__auto___3273 = G__3274;
 continue;
 } else {
 }
@@ -203,13 +203,13 @@ return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3(meta_merge.core.meta_merge
 });
 
 /** @this {Function} */
-meta_merge.core.meta_merge.cljs$lang$applyTo = (function (seq20055){
-var G__20056 = cljs.core.first(seq20055);
-var seq20055__$1 = cljs.core.next(seq20055);
-var G__20057 = cljs.core.first(seq20055__$1);
-var seq20055__$2 = cljs.core.next(seq20055__$1);
+meta_merge.core.meta_merge.cljs$lang$applyTo = (function (seq3229){
+var G__3230 = cljs.core.first(seq3229);
+var seq3229__$1 = cljs.core.next(seq3229);
+var G__3231 = cljs.core.first(seq3229__$1);
+var seq3229__$2 = cljs.core.next(seq3229__$1);
 var self__4717__auto__ = this;
-return self__4717__auto__.cljs$core$IFn$_invoke$arity$variadic(G__20056,G__20057,seq20055__$2);
+return self__4717__auto__.cljs$core$IFn$_invoke$arity$variadic(G__3230,G__3231,seq3229__$2);
 });
 
 meta_merge.core.meta_merge.cljs$lang$maxFixedArity = (2);
